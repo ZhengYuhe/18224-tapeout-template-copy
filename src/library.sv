@@ -1,12 +1,15 @@
 `default_nettype none
 
 module mux
-    #(parameter INPUTS=0, WIDTH=0)
-    (input  logic [WIDTH-1:0] in [INPUTS-1:0],
+    #(parameter INPUTS=8, WIDTH=4)
+    (input  logic [31:0] in,
      input  logic [$clog2(INPUTS)-1:0]      sel,
      output logic [WIDTH-1:0]               out);
 
-    assign out = in[sel];
+    logic [5:0] base, top;
+    assign base = {'b0, sel} << 2;
+    assign top = base + 'h3;
+    assign out = in[top:base];
 
 endmodule: mux
 
