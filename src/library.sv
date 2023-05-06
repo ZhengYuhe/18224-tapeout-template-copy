@@ -14,20 +14,14 @@ module mux
 endmodule: mux
 
 module demux
-    #(parameter OUTPUTS=0, WIDTH=0)
+    #(parameter OUTPUTS=4, WIDTH=0)
     (input  logic [WIDTH-1:0]               in,
      input  logic [$clog2(OUTPUTS)-1:0]     sel,
-     output logic [WIDTH-1:0] out [OUTPUTS-1:0]);
+     output logic [OUTPUTS*WIDTH-1:0] out);
  
-    always_comb begin
-        for (int i = 0; i < OUTPUTS; i++) begin
-            if (i == sel) begin
-                out[i] = in;
-            end else begin
-                out[i] = 'b0;
-            end
-        end
-    end
+    logic [OUTPUTS*WIDTH-1:0] temp;
+    assign temp[width-1:0] = in;
+    assign out = temp << (sel * WIDTH);
 endmodule: demux
 
 
