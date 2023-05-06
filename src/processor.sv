@@ -27,14 +27,14 @@ module processor(
     logic[3:0] PE_out_0,PE_out_1,PE_out_2,PE_out_3;
     logic[3:0] PE_reg_out_0,PE_reg_out_1,PE_reg_out_2,PE_reg_out_3;
 
-    register #($bits(PE_out0), 'h0) PE_out_reg_0(.clock, .reset, .en(en_PE_out0), .clear(1'b0),
-                                                 .D(PE_out0), .Q(PE_reg_out_0));
-    register #($bits(PE_out1), 'h0) PE_out_reg_1(.clock, .reset, .en(en_PE_out1), .clear(1'b0),
-                                                 .D(PE_out1), .Q(PE_reg_out_1));
-    register #($bits(PE_out2), 'h0) PE_out_reg_2(.clock, .reset, .en(en_PE_out2), .clear(1'b0),
-                                                 .D(PE_out2), .Q(PE_reg_out_2));
-    register #($bits(PE_out3), 'h0) PE_out_reg_3(.clock, .reset, .en(en_PE_out3), .clear(1'b0),
-                                                 .D(PE_out3), .Q(PE_reg_out_3));
+    register #($bits(PE_out_0), 'h0) PE_out_reg_0(.clock, .reset, .en(en_PE_out0), .clear(1'b0),
+                                                  .D(PE_out_0), .Q(PE_reg_out_0));
+    register #($bits(PE_out_1), 'h0) PE_out_reg_1(.clock, .reset, .en(en_PE_out1), .clear(1'b0),
+                                                  .D(PE_out_1), .Q(PE_reg_out_1));
+    register #($bits(PE_out_2), 'h0) PE_out_reg_2(.clock, .reset, .en(en_PE_out2), .clear(1'b0),
+                                                  .D(PE_out_2), .Q(PE_reg_out_2));
+    register #($bits(PE_out_3), 'h0) PE_out_reg_3(.clock, .reset, .en(en_PE_out3), .clear(1'b0),
+                                                  .D(PE_out_3), .Q(PE_reg_out_3));
 
     PE PE0(.ctrl_signals_in(ctr_signals_0), .en(en_PE_0) , .PE_out_a(4'h0), .out(PE_out_0), .*);
     PE PE1(.ctrl_signals_in(ctr_signals_1), .en(en_PE_1) , .PE_out_b(4'h0), .out(PE_out_1), .*);
