@@ -6,7 +6,8 @@ module my_chip (
     input logic clock,
     input logic reset // Important: Reset is ACTIVE-HIGH
 );
-    
+    processor my_design(.instruction(io_in), .result(io_in), .clock(clock), .reset(reset));
+    /*
     // Basic counter design as an example
 
 
@@ -43,5 +44,5 @@ module my_chip (
 
     // instantiate segment display
     seg7 seg7(.counter(digit), .segments(led_out));
-
+    */
 endmodule
