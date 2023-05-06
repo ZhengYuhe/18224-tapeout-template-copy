@@ -1,4 +1,3 @@
-`include "internal_defines.vh"
 `default_nettype none
 module processor(
     input logic[11:0] instruction,
