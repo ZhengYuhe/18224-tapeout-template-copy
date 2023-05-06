@@ -1,4 +1,3 @@
-`include "internal_defines.vh"
 `default_nettype none
 module PE(
     input  logic         clock, en, reset,
