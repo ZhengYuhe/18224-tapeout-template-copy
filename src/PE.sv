@@ -4,7 +4,7 @@ module PE(
     input  logic[7:0]    ctrl_signals_in,
     input  logic [3:0]   PE_out_0,PE_out_1,PE_out_2,PE_out_3, 
     input  logic [3:0]   in_op_0, in_op_1,
-    input  logic [3:0]   PE_reg_out_0,PE_reg_out1,PE_reg_out2,
+    input  logic [3:0]   PE_reg_out_0,PE_reg_out_1,PE_reg_out_2,
     output logic [3:0]   out
 );
 
