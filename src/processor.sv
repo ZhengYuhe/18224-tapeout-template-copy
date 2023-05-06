@@ -25,7 +25,7 @@ module processor(
 
 
     logic[3:0] PE_out0,PE_out1,PE_out2,PE_out3;
-    logic[3:0] PE_reg_out_0,PE_reg_out1,PE_reg_out2,PE_reg_out3;
+    logic[3:0] PE_reg_out_0,PE_reg_out_1,PE_reg_out_2,PE_reg_out_3;
 
     register #($bits(PE_out0), 'h0) PE_out_reg_0(.clock, .reset, .en(en_PE_out0), .clear(1'b0),
                                                  .D(PE_out0), .Q(PE_reg_out_0));
