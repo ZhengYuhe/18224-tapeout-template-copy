@@ -2,7 +2,7 @@
 
 module mux
     #(parameter INPUTS=0, WIDTH=0)
-    (input  logic [INPUTS-1:0][WIDTH-1:0]   in,
+    (input  logic [WIDTH-1:0] in [INPUTS-1:0],
      input  logic [$clog2(INPUTS)-1:0]      sel,
      output logic [WIDTH-1:0]               out);
 
@@ -14,7 +14,7 @@ module demux
     #(parameter OUTPUTS=0, WIDTH=0)
     (input  logic [WIDTH-1:0]               in,
      input  logic [$clog2(OUTPUTS)-1:0]     sel,
-     output logic [OUTPUTS-1:0][WIDTH-1:0]  out);
+     output logic [WIDTH-1:0] out [OUTPUTS-1:0]);
  
     always_comb begin
         for (int i = 0; i < OUTPUTS; i++) begin
