@@ -20,7 +20,7 @@ module demux
      output logic [OUTPUTS*WIDTH-1:0] out);
  
     logic [OUTPUTS*WIDTH-1:0] temp;
-    assign temp[width-1:0] = in;
+    assign temp[WIDTH-1:0] = in;
     assign out = temp << (sel * WIDTH);
 endmodule: demux
 
