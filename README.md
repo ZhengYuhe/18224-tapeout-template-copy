@@ -7,8 +7,8 @@ of instructions over an array of processing elements. It supports simple bitwise
 
 ## How it Works
 The processor contains a scheduler and a series of processing elements. The number of processing elements is bounded by the size limit of the chip and the 4-bit operand size. Each processing element can take two input operands, either from the immediate value within the instruction or from the output of other processing elements. The scheduler decodes an incoming instruction and set matching control signals to the next available PE. When all the PEs are occupied, the scheduler clears a PE by latching its old output into a register, and assign it to perform new calculation. When a program finishes running, the 4-bit result of the program is available at the output of the processor.
-![Process Element Diagram](/images/Processing_Element_diagram.jpeg)
-![Processor Diagram](/images/Processor_Diagram.jpeg)
+![Process Element Diagram](/Processing_Element_diagram.jpeg)
+![Processor Diagram](/Processor_Diagram.jpeg)
 ## Inputs/Outputs
 The design has 12 input pins and 12 output pins. 
 
