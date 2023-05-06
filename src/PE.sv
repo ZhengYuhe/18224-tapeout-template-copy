@@ -2,7 +2,7 @@
 module PE(
     input  logic         clock, en, reset,
     input  logic[7:0]    ctrl_signals_in,
-    input  logic [3:0]   PE_out_0,PE_out_1,PE_out_2,PE_out_3, 
+    input  logic [3:0]   PE_out_a,PE_out_b,PE_out_c,PE_out_d, 
     input  logic [3:0]   in_op_0, in_op_1,
     input  logic [3:0]   PE_reg_out_0,PE_reg_out_1,PE_reg_out_2,
     output logic [3:0]   out
