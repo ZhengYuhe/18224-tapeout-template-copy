@@ -42,13 +42,13 @@ module alu (
     output logic [3:0]    alu_out
 );
     logic [1:0] left_shift_by;
-    assign left_shift_by = alu_src2[1:0];
+    assign left_shift_by = alu_src1[1:0];
     always_comb begin
         unique case (alu_op)
-            2'b00: alu_out = alu_src1 | alu_src2; 
-            2'b01: alu_out = alu_src1 & alu_src2;
-            2'b10: alu_out = alu_src1 ^ alu_src2;
-            2'b11: alu_out = alu_src1 << left_shift_by;
+            2'b00: alu_out = alu_src0 | alu_src1; 
+            2'b01: alu_out = alu_src0 & alu_src1;
+            2'b10: alu_out = alu_src0 ^ alu_src1;
+            2'b11: alu_out = alu_src0 << left_shift_by;
             default: alu_out = 4'b0000;
         endcase
     end
