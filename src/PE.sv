@@ -20,9 +20,9 @@ module PE(
 
     register #($bits(ctrl_signals), 'h0) Ctrl_Register(.clock, .reset, .en, .clear(1'b0), 
                                         .D(ctrl_signals_in), .Q(ctrl_signals));
-    mux #(8, $bits(in_op_0)) alu_src0_mux(.in({PE_out_a,PE_out_b,PE_out_c,PE_out_d, PE_reg_out_0,PE_reg_out_1,PE_reg_out_2, input_op0}), 
+    mux #(8, $bits(input_op0)) alu_src0_mux(.in({PE_out_a,PE_out_b,PE_out_c,PE_out_d, PE_reg_out_0,PE_reg_out_1,PE_reg_out_2, input_op0}), 
                                           .sel(sel_op_0), .out(operand0));
-    mux #(8, $bits(in_op_1)) alu_src1_mux(.in({PE_out_a,PE_out_b,PE_out_c,PE_out_d, PE_reg_out_0,PE_reg_out_1,PE_reg_out_2, input_op1}), 
+    mux #(8, $bits(input_op0)) alu_src1_mux(.in({PE_out_a,PE_out_b,PE_out_c,PE_out_d, PE_reg_out_0,PE_reg_out_1,PE_reg_out_2, input_op1}), 
                                           .sel(sel_op_1), .out(operand1));
     
     register #($bits(operand0), 'h0) alu_sr0_reg(.clock, .reset, .en, .clear(1'b0),
